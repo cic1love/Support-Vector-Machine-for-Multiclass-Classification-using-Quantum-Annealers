@@ -21,27 +21,6 @@ GAMMA = 10
 C = 1
 class_num = 4
 
-def decision_boundary(clf, X, y, ax, title,xx,yy):
-    clf.solve(X, y)
-
-    # Plot the decision boundary. For that, we will assign a color to each
-    # point in the mesh [x_min, x_max]x[y_min, y_max].
-    Z = clf.predict(np.c_[xx.ravel(), yy.ravel()])
-
-    # Put the result into a color plot
-    Z = Z.reshape(xx.shape)
-    ax.pcolormesh(xx, yy, Z, cmap=plt.cm.Paired)
-
-    # Plot also the training points
-    ax.scatter(X[:, 0], X[:, 1], c=y, edgecolors='k', cmap=plt.cm.Paired)
-
-    # label
-    ax.set_title(title)
-
-    scores = clf.evaluate(X, y)
-
-    return scores
-
 def main():
     data, label = train_x, train_y
 
