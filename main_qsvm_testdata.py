@@ -1,3 +1,5 @@
+#Copyright 2022 NTT CORPORATION
+
 import numpy as np
 import matplotlib.pyplot as plt
 from qsvm import OneVsRestClassifier
