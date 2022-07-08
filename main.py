@@ -105,17 +105,13 @@ def main_9():
     #plt.title('SVM multi-class (B=%s,K=%s,C=%s, gamma=%s, Xi=%s, acc=%f)'% (B, K, C, GAMMA, XI, scores))
 
 def main():
-    #data, label = make_gaussian_quantiles(n_samples=120,n_features=2, n_classes=3, random_state=66)
-    #data, label = get_data_3Dsynthetic(0, 0.2, 120, 2)
-
-    data = np.load('data_3c.npy')
-    label = np.load('label_3c.npy')
+    data, label = make_gaussian_quantiles(n_samples=120,n_features=2, n_classes=3, random_state=66)
+    data, label = get_data_3Dsynthetic(0, 0.2, 120, 2)
 
     print(data, label)
     #plt.scatter(data[:, 0], data[:, 1], c=label)
     #plt.show()
 
-    #"""
     # graph common settings
     h = .02  # step size in the mesh
     x_min, x_max = data[:, 0].min() - .5, data[:, 0].max() + .5
@@ -137,6 +133,5 @@ def main():
 
     plt.show()
 
-    #"""
 if __name__ == '__main__':
     main()
